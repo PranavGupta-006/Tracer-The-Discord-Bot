@@ -5,7 +5,7 @@
 This project is a Discord bot designed to manage a simple **lost and found system for communities such as campuses, clubs, or organizations**.
 Users can upload images of found items, store contact details securely, search for items by name, and retrieve item information directly through Discord commands.
 
-The bot stores item data in a **separate SQLite database for each Discord server**, ensuring that data from different servers does not mix.
+The bot running in a Python3 Virtual Environment stores item data in a **separate SQLite database for each Discord server**, ensuring that data from different servers does not mix.
 
 Contact details are encrypted before being stored to protect user privacy.
 
@@ -101,23 +101,6 @@ Each item record contains:
 
 ---
 
-# Project Structure
-
-```
-project/
-│
-├── bot.py
-├── uploads/
-├── guild_<guild_id>.db
-└── README.md
-```
-
-* `bot.py` contains the main bot logic
-* `uploads/` stores images of uploaded items
-* `guild_<guild_id>.db` stores the SQLite database for each Discord server
-
----
-
 # Installation
 
 Clone the repository:
@@ -125,6 +108,8 @@ Clone the repository:
 ```
 git clone https://github.com/yourusername/lost-found-bot.git
 cd lost-found-bot
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 Install required dependencies:
@@ -152,7 +137,7 @@ Alternatively, you can replace the placeholder in the code.
 Start the bot with:
 
 ```
-python bot.py
+python3 bot.py
 ```
 
 If the token is valid and permissions are set correctly, the bot will connect to Discord and begin accepting commands.
